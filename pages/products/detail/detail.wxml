@@ -1,5 +1,5 @@
 <!--pages/products/detail/detail.wxml-->
-<view>
+<view class="container">
   <!-- 轮播图 -->
   <swiper indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
@@ -9,4 +9,15 @@
       </swiper-item>
     </block>
   </swiper>
+  <view class="pro-baseInfo">
+  <view class="pro-title">{{proListArr[proId].pro_title}}</view>
+  <text class="pro-price">¥ {{proListArr[proId].pro_price}}</text>
+  <text class="pro-priceold">¥ {{proListArr[proId].pro_priceold}}</text>
+  </view>
+  <view class='pro-tags'>
+  <view class="pro-detail-title">商品参数</view>
+    <view class='pro-detail-logo'>品牌</view><view class='pro-detail-logo-name'>小米</view>
+    <view class='pro-detail-logo'>传输速率</view><view class='pro-detail-logo-name'>{{proDetail.transRate}}</view>
+    <view class='pro-detail-logo'>类型</view><view class='pro-detail-logo-name'>{{proDetail.routerType}}</view>
+  </view>
 </view>

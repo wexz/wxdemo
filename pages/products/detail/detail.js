@@ -1,22 +1,5 @@
 // pages/products/detail/detail.js
 
-let proImg=[{
-Num:111,
-swiper:[
-  'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/6efc52e32da7595519d9907cc124a50c.jpg?thumb=1&w=720&h=792',
-  'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2764f1f61a5a7691ee5f4998e6e83666.jpg?thumb=1&w=720&h=792',
-  'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/9b0900deeb89fb9b2ee8faa239a27380.jpg?thumb=1&w=720&h=792'
-]},
-{
-  Num:121,
-  swiper: [
-    '//i8.mifile.cn/v1/a1/2928abd1-0e07-b1ba-59cc-9f3410cf7fde!720x792.webp',
-    '//i8.mifile.cn/v1/a1/3c96e923-284b-0d4c-b7e3-e3e6acd713f1!720x792.webp',
-    '//i8.mifile.cn/v1/a1/a25fd308-dce7-393e-3113-02d52b817d5d!720x792.webp'
-  ]
-}
-
-]
 const app = getApp()
 
 Page({
@@ -34,59 +17,33 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  // onLoad: function (options) {
-  //   wx.setNavigationBarTitle({
-  //     title: '商品详情'
-  //   });
-  //   //console.log(options.Num);
-  //   options.Num = options.Num ||682;
-  //   let imgUrl;
-  //   for(let i=0;i<proImg.length;i++)
-  //   {
-  //     if (options.Num == proImg[i].Num) {
-  //       imgUrl= proImg[i].swiper;
-  //     }
-  //   }
-  //   let productItem = imgUrl;
-  //   console.log(productItem);
-  //    this.setData({
-  //      imgUrls: productItem,
-  //    })
-  // },
-  /**
- * 生命周期函数--监听页面加载
- */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '商品详情'
     });
-    options.Num = options.Num || 682;
-    console.log(options.Num);
+    //console.log(options.Num);
+    options.Num = options.Num ||682;
     //获取产品列表
     let proId1;
-    let proList1 = wx.getStorageSync('proList');
-    for (let i = 0; i < proList1.length; i++) {
-      if (proList1[i].Num == options.Num) {
-        proId1 = i;
+    let proListGet=wx.getStorageSync('proList');
+    for(let i=0;i<proListGet.length;i++)
+    {
+      //判断与当前页面传参获取的Num
+      if(proListGet[i].Num==options.Num)
+      {
+        proId1=i;//读取是第几个
       }
     }
-    let productItem = proList1[proId1];
-    let cartProduct = {
-      proId: productItem.Num,
-      title: productItem.ProductName,
-      price: productItem.CurrentPrice,
-      num: parseInt(this.data.num),
-      img: productItem.ProductPicSrc200,
-      jump: '/pages/products/detail/detail?Num=' + productItem.Num,
-    };
-    console.log(productItem.swiper);
+    let productItem=proListGet[proId1];
+    console.log(productItem);
+    //读取最新数据
     this.setData({
+      imgUrls:productItem.swiper,//获取到swiper页面上面的图片
       proId: proId1,
-      proListArray: proList1,
-      cartProduct: cartProduct,
-      imgUrls: productItem.swiper
+      proListArr: proListGet,
     })
   },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
