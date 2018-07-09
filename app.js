@@ -6,7 +6,7 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录2333333332啊啊啊
+    // 登录 我在这里改了代码
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
