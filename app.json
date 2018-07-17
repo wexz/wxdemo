@@ -3,13 +3,14 @@
     "pages/home/home",
     "pages/products/list/list",
     "pages/products/detail/detail",
+    "pages/products/detail/tags",
     "pages/cart/cart",
     "pages/about/about",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ff6700",
+    "navigationBarBackgroundColor": "#ccc",
     "navigationBarTitleText": "小米商城",
     "navigationBarTextStyle": "#fff"
   },

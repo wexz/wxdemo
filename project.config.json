@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.1.1",
-	"appid": "wx2f3858b200b6e246",
+	"appid": "touristappid",
 	"projectname": "%E7%94%B5%E5%95%86wxdemo",
 	"condition": {
 		"search": {
@@ -51,6 +51,12 @@
 					"name": "detail",
 					"pathName": "pages/products/detail/detail",
 					"query": "Num=111"
+				},
+				{
+					"id": -1,
+					"name": "tags",
+					"pathName": "pages/products/detail/tags",
+					"query": ""
 				}
 			]
 		}

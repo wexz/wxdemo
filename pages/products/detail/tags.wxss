@@ -1,0 +1,29 @@
+/* pages/products/detail/tags.wxss */
+.pro-args
+{
+  width: 90%;
+  background: #fff;
+  padding:40rpx 5% 5rpx;
+  margin:15rpx auto;
+}
+.pro-detail-title
+{
+  border-left: 2px solid #000;
+  font-size: 30rpx;
+  padding-left: 10rpx;
+  margin-bottom: 40rpx;
+}
+.pro-detail-logo
+{
+  float: left;
+  clear: both;
+  font-size: 30rpx;
+  line-height: 30rpx;
+}
+.pro-detail-logo-name
+{
+  float: right;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  margin:10rpx auto;
+}
