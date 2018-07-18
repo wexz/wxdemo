@@ -1,8 +1,7 @@
 <!--pages/products/detail/detail.wxml-->
 <view class="container">
   <!-- 轮播图 -->
-  <swiper indicator-dots="{{indicatorDots}}"
-    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
     <block wx:for="{{imgUrls}}" wx:key="id">
       <swiper-item>
         <image src="{{item}}" class="slide-image" />
@@ -17,33 +16,36 @@
   </view>
   <!-- 商品参数 -->
   <view class='pro-tags'>
-  <view class="pro-detail-title">商品参数</view>
-    <view class='pro-detail-logo'>品牌</view><view class='pro-detail-logo-name'>小米</view>
-    <view class='pro-detail-logo'>传输速率</view><view class='pro-detail-logo-name'>{{proDetail.transRate}}</view>
-    <view class='pro-detail-logo'>类型</view><view class='pro-detail-logo-name'>{{proDetail.routerType}}</view>
+    <view class="pro-detail-title">商品参数</view>
+    <view class='pro-detail-logo'>品牌</view>
+    <view class='pro-detail-logo-name'>小米</view>
+    <view class='pro-detail-logo'>传输速率</view>
+    <view class='pro-detail-logo-name'>{{proDetail.transRate}}</view>
+    <view class='pro-detail-logo'>类型</view>
+    <view class='pro-detail-logo-name'>{{proDetail.routerType}}</view>
     <view class="pro_detaillist" bindtap='todetailTags'>
-    详细参数
-    <view class="arrow">></view>
+      详细参数
+      <view class="arrow">></view>
     </view>
   </view>
-    <!-- 详情 -->
+  <!-- 详情 -->
   <view class='pro-detail'>
     <view class='pro-detail-title'>商品详情</view>
     <image wx:for="{{proListArr[proId].ProductDescLong}}" src='{{item}}' wx:key="id" mode='widthFix'></image>
-  </view> 
+  </view>
   <!-- 底部信息 -->
   <view class="bottomBar">
     <view class='online'>
       <button open-type="contact">
         <image src="/images/comments.png"></image>
       </button>
-  </view>
-  <view class='cart' bindtap='toCart'>
-    <image src="/images/cart.png"></image>
-    <text class="cartNum">{{cartNum}}</text>
-  </view>
-  <view class='join' bindtap='addCart'>加入购物车 </view>
-  <view class='buy' bindtap='addBuy'>立即购买</view>
+    </view>
+    <view class='cart' bindtap='toCart'>
+      <image src="/images/cart.png"></image>
+      <text class="cartNum">{{cartNum}}</text>
+    </view>
+    <view class='join' bindtap='addCart'>加入购物车 </view>
+    <view class='buy' bindtap='addBuy'>立即购买</view>
   </view>
   <!-- 加入购物车/立即购买弹出框 -->
   <view class='join-box' hidden="{{boxFlag}}">
@@ -52,16 +54,17 @@
     <text class='join-price'>￥{{proListArr[proId].pro_price}}</text>
     <!-- 库存 -->
     <view class='pro-stock'>
-      <text>数量</text> <text class='grey'>（库存{{stock}}件）</text>
-      <!-- 加减按钮 --> 
-      <view class="stepper">  
-        <!-- 减号 -->  
-        <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  
-        <!-- 数值 -->  
-        <input type="number" bindchange="bindManual" value="{{num}}" />  
-        <!-- 加号 -->  
-        <text class="normal" bindtap="bindPlus">+</text>  
-      </view>     
+      <text>数量</text>
+      <text class='grey'>（库存{{stock}}件）</text>
+      <!-- 加减按钮 -->
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+        <!-- 数值 -->
+        <input type="number" bindchange="bindManual" value="{{Innum}}" />
+        <!-- 加号 -->
+        <text class="normal" bindtap="bindPlus">+</text>
+      </view>
     </view>
     <view class='button' bindtap="{{addButton=='立即购买'? 'toPay':'toAddCart'}}">{{addButton}}</view>
   </view>

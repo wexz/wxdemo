@@ -4,15 +4,16 @@
     "pages/products/list/list",
     "pages/products/detail/detail",
     "pages/products/detail/tags",
+    "pages/order/pay/pay",
     "pages/cart/cart",
     "pages/about/about",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ccc",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "小米商城",
-    "navigationBarTextStyle": "#fff"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "borderStyle": "#ccc",

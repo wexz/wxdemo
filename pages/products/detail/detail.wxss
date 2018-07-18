@@ -139,6 +139,21 @@ swiper-item image
   margin: 35rpx  auto;
   display: block;
 }
+.cart .cartNum
+{
+  color: #fff;
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top:20rpx;
+  right: 15rpx;
+  background-color: #FF0000;
+  border-radius: 50%;
+  text-align: center;
+  line-height:30rpx;
+  font-size:22rpx;
+
+}
 .bottomBar .join
 {
   border: 1px solid #f5f5f5;
